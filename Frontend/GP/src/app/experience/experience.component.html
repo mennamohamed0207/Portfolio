@@ -13,7 +13,7 @@
                         [ngClass]="{'prt_about_learnbox_left': count % 2 != 0, 'prt_about_learnbox_right': count % 2 == 0}">
 
                         <div class="prt_about_learnbox_year">
-                            <h1 class="year">{{i.fromDate}}</h1>
+                            <h1 class="year">{{i.fromDate | date}}</h1>
                         </div>
                         <div class="prt_about_learnbox_info">
                             <h4 [ngClass]="{'right': count % 2 != 0, 'left': count % 2 == 0}">{{i.title}}</h4>
