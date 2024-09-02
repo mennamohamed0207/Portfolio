@@ -18,9 +18,7 @@ export class GithubCardComponent implements OnInit {
   }
   public language: String | undefined;
   ngOnInit(): void {
-    console.log(this.name);
-    console.log(this.languages);
-    console.log(this.tools);
+    
   }
   openLink(link: String) {
   }
