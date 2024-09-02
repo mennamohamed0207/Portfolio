@@ -16,6 +16,9 @@ export class SkillsComponent {
   constructor(private dataService: ExperienceService) { }
   skills: Skill[] = [
     { _id: "66b9b2e8d78432e38c3ede7c", name: "Angular", category: "Frontend", __v: 0 },
+    { _id: "66b9b2e8d78432e38c3ede7c", name: "HTML", category: "Frontend", __v: 0 },
+    { _id: "66b9b2e8d78432e38c3ede7c", name: "CSS", category: "Frontend", __v: 0 },
+    { _id: "66b9b2e8d78432e38c3ede7c", name: "Javascript", category: "Frontend", __v: 0 },
     { _id: "66b9b30dd78432e38c3ede7e", name: "MongoDB", category: "Databases", __v: 0 },
     { _id: "66b9b31ed78432e38c3ede80", name: "MySQL", category: "Databases", __v: 0 },
     { _id: "66b9b330d78432e38c3ede82", name: "ExpressJs", category: "Backend", __v: 0 },
@@ -32,11 +35,7 @@ export class SkillsComponent {
   }
 
   ngOnInit(): void {
-this.dataService.getSkills().subscribe(
-  (data) => {
-    this.skills = data.data;
-  }
-)    
+ 
     this.categorizeSkills();
   }
  public categorizedSkills: { [key: string]: Skill[] } = {};
