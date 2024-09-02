@@ -25,6 +25,12 @@ export class GithubCardComponent implements OnInit {
   openLink(link: String) {
   }
 
-
-
+  isToolsEmpty() : boolean{
+    if(this.tools?.length == 0){
+      return true;
+    
+    }else {
+      return false;
+    }
+  }
 }

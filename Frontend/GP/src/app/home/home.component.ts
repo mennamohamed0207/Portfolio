@@ -12,13 +12,7 @@ export class HomeComponent {
   about :string = ""
   private subscription: Subscription | undefined;
 
-  ngOnInit(): void {
-    this.subscription = this.dataService.getAbout().subscribe(
-      (data) => {
-       this.about =data.data[0].about;
-      }
-    )
-  }
+  
   greeting:{
     username: string,
     title: string,
@@ -29,12 +23,8 @@ export class HomeComponent {
       title: "Welcome, I'm Menna",
       subTitle: "A passionate Computer Engineer 👩‍💻",
       resumeLink: "https://drive.google.com/file/d/1wKpkFRLQBiBWQYFYoCnT--nDyHxKO7lC/view?usp=drive_link",
-      paragragh:this.about
+      paragragh:"with a passion for solving complex problems and creating impactful projects, ranging from machine learning advancements to dynamic web applications. Always enthusiastic about exploring new technologies and thriving in challenging technical environments."
     };
-    ngOnDestroy(): void {
-      if (this.subscription) {
-        this.subscription.unsubscribe();
-      }
-    }
+  
 
 }

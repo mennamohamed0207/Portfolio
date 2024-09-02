@@ -5,6 +5,7 @@
     padding: 2rem;
     cursor: pointer;
     font-family: 'Courier New', Courier, monospace;
+    border: 1px solid rgb(226, 119, 214);
   }
   .repo-card-div:hover {
     box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px -10px;

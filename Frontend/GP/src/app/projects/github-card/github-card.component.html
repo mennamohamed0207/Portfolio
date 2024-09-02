@@ -16,8 +16,8 @@
         <span *ngFor="let language of languages">
           <div class="language-color"></div>
           <p>{{language}}</p>
-          <p class="repo-tools">Tools: {{tools}}</p>
         </span>
+        <p class="repo-tools" *ngIf="!isToolsEmpty()">Tools: {{tools}}</p>
       </div>
     </div>
     </a>
