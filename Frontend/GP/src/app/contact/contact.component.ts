@@ -12,7 +12,7 @@ export class ContactComponent {
   public linkedin="https://www.linkedin.com/in/menna-mohamed-15ba5821b/";
   public facebook="https://www.facebook.com/profile.php?id=100004080760812";
   public phone="01013222936";
-  public resume="https://drive.google.com/file/d/1NgtddzWF-ClE6diD82lTqtcnvSgvWubK/view?usp=sharing";
+  public resume="https://drive.google.com/drive/folders/1vU_JBoNKGiVs7ubyc2NlTyRYL379qTNj?usp=sharing";
   constructor() {}
 
   ngOnInit(): void {

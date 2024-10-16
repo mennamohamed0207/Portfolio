@@ -11,14 +11,17 @@
     font-family: 'Courier New', Courier, monospace;
 }
 .right{
-    padding-right: 300px;
-    margin: 0px;
+    padding-right: 0px;
+    margin-right: 400px;
 }
 .right-org{
-    padding-right: 400px;
+    padding-right: 0px;
+    margin-right:400px;
+    
 }
 .left{
     padding-right: 0px;
+    margin: 0px;
 }
 
 .timeline-heading {
