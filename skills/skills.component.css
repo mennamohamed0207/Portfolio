@@ -1,0 +1,52 @@
+.skills-container {
+    text-align: left;
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .skills-container h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .skills-item {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .skills-item.design {
+    background-color: #f04c61;
+    color: #ffffff;
+    grid-column: span 2;
+  }
+  
+  .skills-item h3 {
+    margin: 0;
+    font-size: 1.5em;
+  }
+  
+  .skills-item p {
+    margin: 10px 0 0;
+    font-size: 1em;
+    padding-left:5px ;
+  }
+  .timeline-heading {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    font-size: 12px;
+}
+.prt_heading h1 {
+    font-size: 40px;
+    position: relative;
+    width: auto;
+    padding-bottom: 15px;
+}

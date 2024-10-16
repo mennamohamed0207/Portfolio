@@ -1,0 +1,277 @@
+<h1>About</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col" *ngFor="let i of fieldsOfAbout">{{i}}</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of Bio">
+            <th scope="row">{{i.about}}</th>
+            <th scope="row"><button class="btn btn-warning" (click)="editAbout(i._id)">Edit</button></th>
+        </tr>
+
+    </tbody>
+</table>
+
+
+<form [formGroup]="aboutForm" (ngSubmit)="onSubmitAbout()">
+    <div class="form-group">
+        <label for="about">{{fieldsOfAbout[0]|titlecase}}</label>
+        <input type="text" class="form-control" id="about" placeholder="Enter about" formControlName="about">
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+</form>
+<hr />
+<h1>Experience</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col" *ngFor="let i of fieldOfExperience">{{i}}</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of experiences">
+            <th scope="row">{{i.title}}</th>
+            <th scope="row">{{i.org}}</th>
+            <th scope="row">{{i.fromDate}}</th>
+            <th scope="row">{{i.toDate}}</th>
+            <th scope="row">{{i.description}}</th>
+            <th scope="row">{{i.tools}}</th>
+            <th scope="row" *ngIf="i.githubLink"><a href={{i.githubLink}}><button class="btn btn-primary">Github
+                        repo</button></a></th>
+            <th scope="row" *ngIf="!i.githubLink"> </th>
+            <th scope="row"><button class="btn btn-warning" (click)="edit(i._id)">Edit</button></th>
+            <th scope="row"><button class="btn btn-danger" (click)="delete(i._id)">Delete</button></th>
+
+        </tr>
+
+    </tbody>
+</table>
+<form [formGroup]="experienceForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="title">{{fieldOfExperience[0]|titlecase}}</label>
+        <input type="text" class="form-control" id="title" placeholder="Enter title" formControlName="title">
+    </div>
+    <div class="form-group">
+        <label for="org">{{fieldOfExperience[1]|titlecase}}</label>
+        <input type="text" class="form-control" id="org" placeholder="Enter Organization" formControlName="org">
+    </div>
+    <div class="form-group">
+        <label for="fromDate">{{fieldOfExperience[2]|titlecase}}</label>
+        <input type="text" class="form-control" id="fromDate" placeholder="Enter start date "
+            formControlName="fromDate">
+    </div>
+    <div class="form-group">
+        <label for="toDate">{{fieldOfExperience[3]|titlecase}}</label>
+        <input type="text" class="form-control" id="toDate" placeholder="Enter end date" formControlName="toDate">
+    </div>
+    <div class="form-group">
+        <label for="description">{{fieldOfExperience[4]|titlecase}}</label>
+        <input type="text" class="form-control" id="description" placeholder="Enter description separated by comma"
+            formControlName="description">
+    </div>
+    <div class="form-group">
+        <label for="tools">{{fieldOfExperience[5]|titlecase}}</label>
+        <input type="text" class="form-control" id="tools" placeholder="Enter tools used separated by comma"
+            formControlName="tools">
+    </div>
+    <div class="form-group">
+        <label for="githubLink">{{fieldOfExperience[6]|titlecase}}</label>
+        <input type="text" class="form-control" id="githubLink" placeholder="Enter github link"
+            formControlName="githubLink">
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+</form>
+
+<hr />
+
+<h1>Education</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col" *ngFor="let i of fieldOfEducation">{{i}}</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of educations">
+            <th scope="row">{{i.college}}</th>
+            <th scope="row">{{i.department}}</th>
+            <th scope="row">{{i.university}}</th>
+            <th scope="row">{{i.degree}}</th>
+            <th scope="row">{{i.fromDate}}</th>
+            <th scope="row">{{i.toDate}}</th>
+            <th scope="row">{{i.CumulativeGrade}}</th>
+            <th scope="row"><button class="btn btn-warning" (click)="edit_edu(i._id)">Edit</button></th>
+            <th scope="row"><button class="btn btn-danger" (click)="delete_edu(i._id)">Delete</button></th>
+
+        </tr>
+
+    </tbody>
+</table>
+
+<form [formGroup]="educationForm" (ngSubmit)="onSubmit_edu()">
+    <div class="form-group">
+        <label for="college">{{fieldOfEducation[0]|titlecase}}</label>
+        <input type="text" class="form-control" id="college" placeholder="Enter college" formControlName="college">
+    </div>
+    <div class="form-group">
+        <label for="department">{{fieldOfEducation[1]|titlecase}}</label>
+        <input type="text" class="form-control" id="department" placeholder="Enter department"
+            formControlName="department">
+    </div>
+    <div class="form-group">
+        <label for="fromDate">{{fieldOfEducation[4]|titlecase}}</label>
+        <input type="text" class="form-control" id="fromDate" placeholder="Enter start date "
+            formControlName="fromDate">
+    </div>
+    <div class="form-group">
+        <label for="toDate">{{fieldOfEducation[5]|titlecase}}</label>
+        <input type="text" class="form-control" id="toDate" placeholder="Enter end date" formControlName="toDate">
+    </div>
+
+    <div class="form-group">
+        <label for="university">{{fieldOfEducation[2]|titlecase}}</label>
+        <input type="text" class="form-control" id="university" placeholder="Enter university"
+            formControlName="university">
+    </div>
+    <div class="form-group">
+        <label for="degree">{{fieldOfEducation[3]|titlecase}}</label>
+        <input type="text" class="form-control" id="degree" placeholder="Enter degree" formControlName="degree">
+    </div>
+
+    <div class="form-group">
+        <label for="CumulativeGrade">{{fieldOfEducation[6]|titlecase}}</label>
+        <input type="text" class="form-control" id="CumulativeGrade" placeholder="Enter cumulative grade"
+            formControlName="CumulativeGrade">
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+</form>
+<hr />
+<h1>Projects</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col" *ngFor="let i of fieldsOfProjects">{{i}}</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of projects">
+            <th scope="row">{{i.name}}</th>
+            <th scope="row">{{i.description}}</th>
+            <th scope="row" *ngIf="i.link"><a href={{i.link}}><button class="btn btn-primary">Github
+                        repo</button></a></th>
+            <th scope="row">{{i.languages}}</th>
+            <th scope="row">{{i.tools}}</th>
+            <th scope="row">{{i.role}}</th>
+            <th scope="row"><button class="btn btn-warning" (click)="editProject(i._id)">Edit</button></th>
+            <th scope="row"><button class="btn btn-danger" (click)="deleteProject(i._id)">Delete</button></th>
+        </tr>
+    </tbody>
+</table>
+
+<form [formGroup]="projectForm" (ngSubmit)="onSumbitProject()">
+    <div class="form-group">
+        <label for="name">{{fieldsOfProjects[0]|titlecase}}</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter skill" formControlName="name">
+    </div>
+    <div class="form-group">
+        <label for="description">{{fieldsOfProjects[1]|titlecase}}</label>
+        <input type="text" class="form-control" id="description" placeholder="Enter description" formControlName="description">
+    </div>
+    <div class="form-group">
+        <label for="link">{{fieldsOfProjects[2]|titlecase}}</label>
+        <input type="text" class="form-control" id="link" placeholder="Enter link" formControlName="link">
+    </div>
+    <div class="form-group">
+        <label for="languages">{{fieldsOfProjects[3]|titlecase}}</label>
+        <input type="text" class="form-control" id="languages" placeholder="Enter languages" formControlName="languages">
+    </div>
+    <div class="form-group">
+        <label for="role">{{fieldsOfProjects[4]|titlecase}}</label>
+        <input type="text" class="form-control" id="role" placeholder="Enter role" formControlName="role">
+    </div>
+    <div class="form-group">
+        <label for="tools">{{fieldsOfProjects[5]|titlecase}}</label>
+        <input type="text" class="form-control" id="tools" placeholder="Enter tools" formControlName="tools">
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+</form>
+
+
+<h1>Skills</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col" *ngFor="let i of fieldsOfSkills">{{i}}</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of skills">
+            <th scope="row">{{i.name}}</th>
+            <th scope="row">{{i.category}}</th>
+            <th scope="row"><button class="btn btn-warning" (click)="editSkill(i._id)">Edit</button></th>
+            <th scope="row"><button class="btn btn-danger" (click)="deleteSkill(i._id)">Delete</button></th>
+
+        </tr>
+
+    </tbody>
+</table>
+
+<form [formGroup]="skillsForm" (ngSubmit)="onSubmitSkill()">
+    <div class="form-group">
+        <label for="name">{{fieldsOfSkills[0]|titlecase}}</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter skill" formControlName="name">
+    </div>
+    <div class="form-group">
+        <label for="category">{{fieldsOfSkills[1]|titlecase}}</label>
+        <input type="text" class="form-control" id="category" placeholder="Enter category" formControlName="category">
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+</form>
+
+<hr />
+<h1>Contact</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col" *ngFor="let i of fieldsOfContact">{{i}}</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of contact">
+            <th scope="row">{{i.name}}</th>
+            <th scope="row">{{i.link}}</th>
+            <th scope="row"><button class="btn btn-warning" (click)="editContact(i._id)">Edit</button></th>
+            <th scope="row"><button class="btn btn-danger" (click)="deleteContact(i._id)">Delete</button></th>
+
+        </tr>
+
+    </tbody>
+</table>
+
+<form [formGroup]="contactForm" (ngSubmit)="onSubmitContact()">
+    <div class="form-group">
+        <label for="name">{{fieldsOfContact[0]|titlecase}}</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter name" formControlName="name">
+    </div>
+    <div class="form-group">
+        <label for="link">{{fieldsOfContact[1]|titlecase}}</label>
+        <input type="text" class="form-control" id="link" placeholder="Enter link" formControlName="link">
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+</form>
+
+<hr />
